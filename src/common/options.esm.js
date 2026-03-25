@@ -114,7 +114,7 @@ const isBeta = manifest.applications.gecko.id.endsWith('-dev');
 							.tab:not(.pinned).tst-search\:not-matching {
 								padding-top: 0; padding-bottom: 1px;
 								margin-bottom: calc(-38px * ${((100-shrink)/100).toFixed(6)});
-								transform: scaleY(${shrink.toFixed(6)}%); transform-origin: top;
+								transform: scaleY(${(shrink/100).toFixed(6)}); transform-origin: top;
 							}
 						` : '', [ { }, { from: 25, to: 80, }, ], ],
 						[ 'opacity', [ false, 60, ], [ { type: 'boolean', }, { prefix: 'Reduce Opacity to', type: 'integer', suffix: '%', }, ], (active, opacity = 60) => active ? String.raw`
